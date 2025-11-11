@@ -313,3 +313,78 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
 </head>
+<body>
+    <div class="login-wrapper">
+        <div class="logo-section">
+            <img src="https://eventsync.io/assets/logo-8fa6656d32dab49a45a52d1fa123d81a082dc63a8ece04ef425b996c305349da.svg" alt="EventSync Logo">
+        </div>
+        <div class="form-section">
+        
+            <?php if ($debug): ?>
+                <div class="debug"><?php echo $debug; ?></div>
+            <?php endif; ?>
+      
+            <?php if ($message): ?>
+                <div class="message <?php echo $messageType; ?>">
+                    <?php echo htmlspecialchars($message); ?>
+                </div>
+            <?php endif; ?>
+      
+            <?php if ($messageType !== 'success'): ?>
+            <form class="login-form" method="POST" action="sign-up.php">
+                <div class="input-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" value="<?php echo htmlspecialchars($_POST['full_name'] ?? ''); ?>" required>
+                </div>
+          
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" required>
+                </div>
+          
+                <div class="input-group">
+                    <label for="caswallet_id">CasWallet ID</label>
+                    <input type="text" id="caswallet_id" name="caswallet_id" placeholder="Enter your CasWallet ID" value="<?php echo htmlspecialchars($_POST['caswallet_id'] ?? ''); ?>" required>
+                </div>
+          
+                <div class="input-group password-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password (min 6 chars)" required>
+                    <span class="password-toggle" onclick="togglePassword()">👁</span>
+                </div>
+          
+                <div class="input-group">
+                    <label for="profession">Profession</label>
+                    <select id="profession" name="profession" required>
+                        <option value="">Select your profession</option>
+                        <option value="Student" <?php echo ($_POST['profession'] ?? '') === 'Student' ? 'selected' : ''; ?>>Student</option>
+                        <option value="Teacher" <?php echo ($_POST['profession'] ?? '') === 'Teacher' ? 'selected' : ''; ?>>Teacher</option>
+                        <option value="Staff" <?php echo ($_POST['profession'] ?? '') === 'Staff' ? 'selected' : ''; ?>>Club</option>
+                        <option value="Other" <?php echo ($_POST['profession'] ?? '') === 'Other' ? 'selected' : ''; ?>>Other</option>
+                    </select>
+                </div>
+          
+                <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+            <?php endif; ?>
+      
+            <div class="login-footer">
+                <a href="login.php">Already have an account? Sign In</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.password-toggle');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁';
+            }
+        }
+    </script>
+</body>
+</html>
