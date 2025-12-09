@@ -264,3 +264,27 @@
             }
         }
     </style>
+    </head>
+<body>
+    <div class="login-wrapper">
+        <div class="logo-section">
+            <img src="https://eventsync.io/assets/logo-018c7909b72b80b364152f440f79ea8678c8ff237502415f489f821ed15fe284.svg" alt="EventSync Logo">
+        </div>
+        <div class="form-section">
+          
+            <?php if ($debug): ?>
+                <div class="debug"><?php echo $debug; ?></div>
+            <?php endif; ?>
+     
+            <?php if ($message): ?>
+                <div class="message <?php echo $messageType; ?>">
+                    <?php echo htmlspecialchars($message); ?>
+                </div>
+            <?php endif; ?>
+     
+            <form class="login-form" method="POST" action="login.php">
+                <div class="input-group">
+                    <label for="caswallet_id">CasWallet ID</label>
+                    <input type="text" id="caswallet_id" name="caswallet_id" placeholder="Enter your CasWallet ID" value="<?php echo htmlspecialchars($_POST['caswallet_id'] ?? ''); ?>" required>
+                </div>
+ 
