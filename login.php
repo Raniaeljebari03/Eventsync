@@ -287,4 +287,24 @@
                     <label for="caswallet_id">CasWallet ID</label>
                     <input type="text" id="caswallet_id" name="caswallet_id" placeholder="Enter your CasWallet ID" value="<?php echo htmlspecialchars($_POST['caswallet_id'] ?? ''); ?>" required>
                 </div>
- 
+  <div class="input-group password-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span class="password-toggle" onclick="togglePassword()">👁</span>
+                </div>
+         
+                <div class="remember-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+         
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+     
+            <div class="login-footer">
+                <a href="sign-up.php">Sign Up</a>
+                <!--a href="forgot.php">Forgot Password?</a-->
+            </div>
+            
+        </div>
+    </div>
