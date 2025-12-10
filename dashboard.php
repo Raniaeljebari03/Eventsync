@@ -115,7 +115,10 @@ if (isset($_POST['unreserve_event'])) {
 }
 
 // Load events
-$events = $pdo->query("SELECT e.*, u.name AS creator FROM events e JOIN users u ON e.created_by = u.id ORDER BY date_time ASC")->fetchAll();
+$events = $pdo->query("SELECT e.*, u.name AS creator, e.id AS event_id 
+                       FROM events e 
+                       JOIN users u ON e.created_by = u.id 
+                       ORDER BY date_time ASC");
 
 // Load my reservations
 $res = $pdo->prepare("SELECT event_id FROM reservations WHERE user_id = ?");
