@@ -4,6 +4,8 @@ A modern university event management and club engagement system built with **PHP
 The platform allows students, teachers, and staff to interact with campus events, clubs, AI-powered recommendations, reservation management, and Instagram-style stories.
 
 ---
+<img width="1913" height="934" alt="image" src="https://github.com/user-attachments/assets/8357601f-3556-4923-b22a-b72b30cf79e3" />
+
 
 ## 🌟 Key Features
 
