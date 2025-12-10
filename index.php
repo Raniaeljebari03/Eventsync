@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; 
+            font-familrg -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; 
             background: linear-gradient(135deg, #f0f8ff 0%, #e0f2fe 100%); 
             color: #1f2937; 
             line-height: 1.6; 
@@ -160,10 +160,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 EventSync. Empowering AUI Connections.  </p>
-        </div>
-    </footer>
-</body>
-</html>
+   <footer>
+    <div class="container">
+        <p>&copy; 2025 EventSync. Empowering AUI Connections.</p>
+    </div>
+</footer>
